@@ -1,2 +1,0 @@
-# thcheese
-thcheese.org
