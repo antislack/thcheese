@@ -10,6 +10,8 @@ $(function() {
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
+        
+        alert(Under Construction);
 
 		// Serialize the form data.
 		var formData = $(form).serialize();
