@@ -29,7 +29,9 @@ $(function() {
 			$(formMessages).addClass('success');
 
 			// Set the message text.
-			$(formMessages).text(response);
+			// $(formMessages).text(response);
+            
+            console.log(response);
 
 			// Clear the form.
 			$('#name').val('');
