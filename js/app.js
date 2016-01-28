@@ -5,13 +5,15 @@ $(function() {
 
 	// Get the messages div.
 	var formMessages = $('#form-messages');
+    
+    alert(Under Construction);
+    
+    console.log('loaded the listeners code.');
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
-        
-        alert(Under Construction);
 
 		// Serialize the form data.
 		var formData = $(form).serialize();
