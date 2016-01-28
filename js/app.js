@@ -6,7 +6,7 @@ $(function() {
 	// Get the messages div.
 	var formMessages = $('#form-messages');
     
-    alert(Under Construction);
+    alert('Under Construction');
     
     console.log('loaded the listeners code.');
 
