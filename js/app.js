@@ -5,19 +5,16 @@ $(function() {
 
 	// Get the messages div.
 	var formMessages = $('#form-messages');
-    
-    // 
-    // alert('Under Construction');
-    
-    console.log('right before trigger');
 
 	// Set up an event listener for the contact form.
-	$(form).submit(function(e) {
+	$(form).click(function(e) {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 
 		// Serialize the form data.
 		var formData = $(form).serialize();
+        
+        console.log('fired the trigger');
 
 		// Submit the form using AJAX.
 		$.ajax({
