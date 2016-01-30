@@ -1,12 +1,15 @@
 <?php
+    // My modifications to mailer script from:
+    // http://blog.teamtreehouse.com/create-ajax-contact-form
+    // Added input sanitizing to prevent injection
 
     // Only process POST reqeusts.
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
         // Get the form fields and remove whitespace.
-        $name = strip_tags(trim($_POST["name"]));
+        $name = strip_tags(trim($_REQUEST["name"]));
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-        $message = trim($_POST["message"]);
+        $email = filter_var(trim($_REQUEST["email"]), FILTER_SANITIZE_EMAIL);
+        $message = trim($_REQUEST["message"]);
 echo 'name: ' . $name . '<br />';
 echo 'message: ' . $message . '<br />';	
 echo 'email: ' . $email . '<br />';
@@ -28,7 +31,7 @@ exit();
         $recipient = "joe.bowman@gmail.com";
 
         // Set the email subject.
-        $subject = "New contact from $name";
+        $subject = "Web Inquiry from $name";
 
         // Build the email content.
         $email_content = "Name: $name\n";
