@@ -10,13 +10,11 @@
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_REQUEST["email"]), FILTER_SANITIZE_EMAIL);
         $message = trim($_REQUEST["message"]);
-echo 'name: ' . $name . '<br />';
-echo 'message: ' . $message . '<br />';	
-echo 'email: ' . $email . '<br />';
-if(!filter_var($email, FILTER_VALIDATE_EMAIL)){	
-http_response_code(400);
-echo 'problem validating email';
-exit();	
+
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){	
+                    http_response_code(400);
+                    echo 'problem validating email';
+                    exit();	
 }
         // Check that data was sent to the mailer.
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
