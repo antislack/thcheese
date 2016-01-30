@@ -15,7 +15,7 @@ $(function() {
 		// Serialize the form data.
 		var formData = $(form).serialize();
         
-        console.log('fired the trigger');
+        console.log(formData);
 
 		// Submit the form using AJAX.
 		$.ajax({
