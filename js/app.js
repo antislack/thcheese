@@ -12,16 +12,15 @@ $(function() {
 		// Stop the browser from submitting the form.
 		e.preventDefault();
 
-		// Serialize the form data.
-		var formData = $(form).serialize();
-        
-        console.log('formData: ' + formData);
+var name = $('#name').val();	
+var email = $('#email').val();	
+var message = $('#message').val();
 
 		// Submit the form using AJAX.
 		$.ajax({
 			type: 'GET',
 			url: $(form).attr('action'),
-			data: formData
+			data: {name:name,email:email,message:message}
 		})
 		.done(function(response) {
 			// Make sure that the formMessages div has the 'success' class.
