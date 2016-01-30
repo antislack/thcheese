@@ -13,7 +13,7 @@
 
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){	
                     http_response_code(400);
-                    echo 'problem validating email';
+                    echo 'Please check the form fields.';
                     exit();	
 }
         // Check that data was sent to the mailer.
@@ -26,7 +26,7 @@
 
         // Set the recipient email address.
         // FIXME: Update this to your desired email address.
-        $recipient = "joe.bowman@gmail.com";
+        $recipient = "tmilbery@gmail.com";
 
         // Set the email subject.
         $subject = "Web Inquiry from $name";
